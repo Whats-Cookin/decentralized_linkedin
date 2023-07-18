@@ -29,7 +29,7 @@ const UploadFiles = () => {
       sx={{
         backgroundColor: "#FFFFFF",
         minHeight: "100vh",
-        width: "65%",
+        width: "65.36%",
         display: "flex",
         flexDirection: "column",
       }}
@@ -178,6 +178,7 @@ const UploadFiles = () => {
               borderRadius: "5px",
               m: " auto 14px",
               mt: "10px",
+              "&:hover": { backgroundColor: "#432335" },
             }}
           >
             Send
