@@ -1,34 +1,31 @@
 import React from 'react'
-import { useForm } from 'react-hook-form';
+import { useForm } from 'react-hook-form'
 import Button from '@mui/material/Button'
-import ILoginProps from './types';
+import ILoginProps from './types'
 import { Box, TextField, Typography } from '@mui/material'
-import styles from './styles';
+import styles from './styles'
 
-
-const Login = ({toggleSnackbar,setSnackbarMessage,setLoading}: ILoginProps) => {
-  const{
+const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) => {
+  const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors }
   } = useForm()
 
- 
-    
-  const onSubmit = handleSubmit(async({email, password})=>{
-    console.log("you pressed submit, congratulations")
-    try{
-      if(!email || !password){
+  const onSubmit = handleSubmit(async ({ email, password }) => {
+    console.log('you pressed submit, congratulations')
+    try {
+      if (!email || !password) {
         toggleSnackbar(true)
-        setSnackbarMessage("Both email and password")
-      }else{
+        setSnackbarMessage('Both email and password')
+      } else {
         setLoading(true)
       }
-    }catch (err:any){
+    } catch (err: any) {
       setLoading(false)
       toggleSnackbar(true)
-      setSnackbarMessage("user not found")
-      console.error("Error:",err?.message)
+      setSnackbarMessage('user not found')
+      console.error('Error:', err?.message)
     }
   })
 
@@ -47,7 +44,8 @@ const Login = ({toggleSnackbar,setSnackbarMessage,setLoading}: ILoginProps) => {
           boxShadow: '0px 1px 20px rgba(0, 0, 0, 0.25)',
           zIndex: 20,
           borderRadius: '10px'
-        }}>
+        }}
+      >
         <Typography
           variant='h5'
           style={{
@@ -76,8 +74,8 @@ const Login = ({toggleSnackbar,setSnackbarMessage,setLoading}: ILoginProps) => {
           error={!!errors.email}
         />
         <TextField
-          {...register('password',{
-            required:"Password is required",
+          {...register('password', {
+            required: 'Password is required'
           })}
           fullWidth
           label='Password'

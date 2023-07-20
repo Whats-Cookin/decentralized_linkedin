@@ -1,4 +1,4 @@
-import { useState} from 'react'
+import { useState } from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
 import Loader from './loading/index'
 import Snackbar from './snackBar/index'
@@ -27,8 +27,7 @@ const App = () => {
       secondary: {
         main: '#FFFFFF'
       }
-    },
-    
+    }
   })
 
   return (
