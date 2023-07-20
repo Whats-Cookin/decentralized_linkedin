@@ -29,14 +29,15 @@ const UploadFiles = () => {
       sx={{
         backgroundColor: "#FFFFFF",
         minHeight: "100vh",
-        width: "65.36%",
+        width: "64.58%",
+        height: "100%",
         display: "flex",
         flexDirection: "column",
       }}
     >
       <Box
         sx={{
-          width: "787px",
+          width: "80%",
           height: "205px",
           m: "175px auto 55px 64px",
           padding: "15px 16px 10px 41px",
@@ -68,6 +69,7 @@ const UploadFiles = () => {
               fontWeight: "500",
               lineHeight: "26.63px",
               color: "#432335",
+              "&:hover": { backgroundColor: "white" },
             }}
           >
             +IMPORT
@@ -93,7 +95,7 @@ const UploadFiles = () => {
         <Divider style={{ height: 1, width: "100%", color: "#00000033" }} />{" "}
         <Box
           sx={{
-            width: "520px",
+            width: "70%",
             height: "48px",
             mt: "45px",
             border: "1px solid #0A0A0A33",
@@ -104,7 +106,7 @@ const UploadFiles = () => {
           }}
         >
           {" "}
-          <Button>
+          <Button onClick={handleClickOpen}>
             <ControlPointIcon sx={{ color: "#757575", fontWeight: "500" }} />
           </Button>
           <Typography
@@ -123,7 +125,7 @@ const UploadFiles = () => {
       </Box>
       <Box
         sx={{
-          width: "787px",
+          width: "80%",
           height: "221px",
           m: "0 auto 55px 64px",
           border: "1px solid #0A0A0A33",
@@ -160,7 +162,7 @@ const UploadFiles = () => {
           <TextField
             label="Email"
             sx={{
-              width: "386px",
+              width: "50%",
               padding: "14px 126px 13 px 13px",
               mt: "10px",
               height: "48px",
@@ -168,7 +170,7 @@ const UploadFiles = () => {
           />
           <Button
             sx={{
-              color: "#ffffff",
+              color: "#67E0A9",
               fontSize: "20px",
               fontWeight: "500",
               backgroundColor: "#432335",
