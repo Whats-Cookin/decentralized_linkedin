@@ -170,10 +170,10 @@ const UploadFiles = () => {
           />
           <Button
             sx={{
-              color: "#67E0A9",
+              color: "white",
               fontSize: "20px",
               fontWeight: "500",
-              backgroundColor: "#432335",
+              backgroundColor: "#67E0A9",
               width: "122px",
               height: "55px",
               border: "1px solid #0A0A0A33",
