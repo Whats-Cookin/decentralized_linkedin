@@ -30,6 +30,7 @@ const Login = ({
       toggleSnackbar(true);
       setSnackbarMessage("user not found");
       console.error("Error:", err?.message);
+
     }
   });
 
