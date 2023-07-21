@@ -33,6 +33,7 @@ const UploadFiles = () => {
         height: "100%",
         display: "flex",
         flexDirection: "column",
+        overflow: "hidden",
       }}
     >
       <Box
@@ -43,6 +44,7 @@ const UploadFiles = () => {
           padding: "15px 16px 10px 41px",
           border: "1px solid #0A0A0A33",
           borderRadius: "5px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
         <Box
@@ -57,7 +59,7 @@ const UploadFiles = () => {
               fontSize: "24px",
               fontWeight: "500",
               lineHeight: "29.05px",
-              fontFamily: "Inter",
+              fontFamily: "Inter, sans-serif",
             }}
           >
             Achievements
@@ -70,6 +72,7 @@ const UploadFiles = () => {
               lineHeight: "26.63px",
               color: "#432335",
               "&:hover": { backgroundColor: "white" },
+              fontFamily: "Inter, sans-serif",
             }}
           >
             +IMPORT
@@ -117,6 +120,7 @@ const UploadFiles = () => {
               width: "247px",
               color: "#707070",
               m: "auto 0",
+              fontFamily: "Inter, sans-serif",
             }}
           >
             Add your Achievements
@@ -131,19 +135,45 @@ const UploadFiles = () => {
           border: "1px solid #0A0A0A33",
           borderRadius: "5px",
           padding: "15px 16px 15px 41px",
+          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
         }}
       >
-        <Typography
-          sx={{ fontSize: "24px", fontWeight: "500", lineHeight: "29.05px" }}
+        <Box
+          sx={{
+            display: "flex",
+            flexDirection: "row",
+            justifyContent: "space-between",
+          }}
         >
-          Recommendations
-        </Typography>
+          <Typography
+            sx={{
+              fontSize: "24px",
+              fontWeight: "500",
+              lineHeight: "29.05px",
+              fontFamily: "Inter, sans-serif",
+            }}
+          >
+            Recommendations
+          </Typography>
+          <Button
+            onClick={handleClickOpen}
+            sx={{
+              fontSize: "22px",
+              fontWeight: "500",
+              lineHeight: "26.63px",
+              color: "#432335",
+              "&:hover": { backgroundColor: "white" },
+              fontFamily: "Inter, sans-serif",
+            }}
+          >
+            +IMPORT
+          </Button>
+        </Box>
         <Divider
           style={{
             height: 1,
             width: "100%",
             color: "#00000033",
-            marginTop: "10px",
             marginBottom: "25px",
           }}
         />
@@ -154,6 +184,7 @@ const UploadFiles = () => {
             lineHeight: "19.36px",
             color: "#707070",
             ml: "7px",
+            fontFamily: "Inter, sans-serif",
           }}
         >
           Request a recommendation
@@ -173,14 +204,15 @@ const UploadFiles = () => {
               color: "white",
               fontSize: "20px",
               fontWeight: "500",
-              backgroundColor: "#67E0A9",
+              backgroundColor: "#009688",
               width: "122px",
               height: "55px",
               border: "1px solid #0A0A0A33",
               borderRadius: "5px",
               m: " auto 14px",
               mt: "10px",
-              "&:hover": { backgroundColor: "#432335" },
+              "&:hover": { backgroundColor: "#00695F" },
+              fontFamily: "Inter, sans-serif",
             }}
           >
             Send
