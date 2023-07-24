@@ -1,4 +1,5 @@
 import {
+  Alert,
   Box,
   Button,
   Dialog,
@@ -8,58 +9,93 @@ import {
   DialogTitle,
   Divider,
   TextField,
-  Typography,
-} from "@mui/material";
-import ControlPointIcon from "@mui/icons-material/ControlPoint";
-import React from "react";
+  Typography
+} from '@mui/material'
+import ControlPointIcon from '@mui/icons-material/ControlPoint'
+import React from 'react'
+import Snackbar from '@mui/material/Snackbar'
+import MuiAlert, { AlertProps } from '@mui/material/Alert'
 
 const UploadFiles = () => {
-  const [open, setOpen] = React.useState(false);
+  const [open, setOpen] = React.useState(false)
+  const [mail, setMail] = React.useState('')
+  const [openAlert, setOpenAlert] = React.useState(false)
+  const [error, setOpenErrorAlert] = React.useState(false)
 
   const handleClickOpen = () => {
-    setOpen(true);
-  };
+    setOpen(true)
+  }
 
   const handleClose = () => {
-    setOpen(false);
-  };
+    setOpen(false)
+  }
+
+  const Alert = React.forwardRef<HTMLDivElement, AlertProps>(function Alert(props, ref) {
+    return <MuiAlert elevation={6} ref={ref} variant='filled' {...props} />
+  })
+
+  const handleClickAlert = () => {
+    setOpenAlert(true)
+  }
+
+  const handleClickErrorAlert = () => {
+    setOpenErrorAlert(true)
+  }
+
+  const handleCloseAlert = (event?: React.SyntheticEvent | Event, reason?: string) => {
+    if (reason === 'clickaway') {
+      return
+    }
+
+    setOpenAlert(false)
+    setOpenErrorAlert(false)
+  }
+
+  function ValidateEmail(mail: string) {
+    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(mail)) {
+      setMail('')
+      return true
+    }
+    // setMail('')
+    return false
+  }
 
   return (
     <Box
       sx={{
-        backgroundColor: "#FFFFFF",
-        minHeight: "100vh",
-        width: "64.58%",
-        height: "100%",
-        display: "flex",
-        flexDirection: "column",
-        overflow: "hidden",
+        backgroundColor: '#FFFFFF',
+        minHeight: '100vh',
+        width: '64.58%',
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        overflow: 'hidden'
       }}
     >
       <Box
         sx={{
-          width: "80%",
-          height: "205px",
-          m: "175px auto 55px 64px",
-          padding: "15px 16px 10px 41px",
-          border: "1px solid #0A0A0A33",
-          borderRadius: "5px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          width: '80%',
+          height: '205px',
+          m: '175px auto 55px 64px',
+          padding: '15px 16px 10px 41px',
+          border: '1px solid #0A0A0A33',
+          borderRadius: '5px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between'
           }}
         >
           <Typography
             sx={{
-              fontSize: "24px",
-              fontWeight: "500",
-              lineHeight: "29.05px",
-              fontFamily: "Inter, sans-serif",
+              fontSize: '24px',
+              fontWeight: '500',
+              lineHeight: '29.05px',
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             Achievements
@@ -67,25 +103,20 @@ const UploadFiles = () => {
           <Button
             onClick={handleClickOpen}
             sx={{
-              fontSize: "22px",
-              fontWeight: "500",
-              lineHeight: "26.63px",
-              color: "#432335",
-              "&:hover": { backgroundColor: "white" },
-              fontFamily: "Inter, sans-serif",
+              fontSize: '22px',
+              fontWeight: '500',
+              lineHeight: '26.63px',
+              color: '#432335',
+              '&:hover': { backgroundColor: 'white' },
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             +IMPORT
           </Button>
-          <Dialog
-            open={open}
-            keepMounted
-            onClose={handleClose}
-            aria-describedby="alert-dialog-slide-description"
-          >
-            <DialogTitle>{"Import File"}</DialogTitle>
+          <Dialog open={open} keepMounted onClose={handleClose} aria-describedby='alert-dialog-slide-description'>
+            <DialogTitle>{'Import File'}</DialogTitle>
             <DialogContent>
-              <DialogContentText id="alert-dialog-slide-description">
+              <DialogContentText id='alert-dialog-slide-description'>
                 Improt your Achievements file from your PC
               </DialogContentText>
             </DialogContent>
@@ -95,32 +126,32 @@ const UploadFiles = () => {
             </DialogActions>
           </Dialog>
         </Box>
-        <Divider style={{ height: 1, width: "100%", color: "#00000033" }} />{" "}
+        <Divider style={{ height: 1, width: '100%', color: '#00000033' }} />{' '}
         <Box
           sx={{
-            width: "70%",
-            height: "48px",
-            mt: "45px",
-            border: "1px solid #0A0A0A33",
-            borderRadius: "5px",
-            alignItems: "left",
-            display: "flex",
-            ml: "10px",
+            width: '70%',
+            height: '48px',
+            mt: '45px',
+            border: '1px solid #0A0A0A33',
+            borderRadius: '5px',
+            alignItems: 'left',
+            display: 'flex',
+            ml: '10px'
           }}
         >
-          {" "}
+          {' '}
           <Button onClick={handleClickOpen}>
-            <ControlPointIcon sx={{ color: "#757575", fontWeight: "500" }} />
+            <ControlPointIcon sx={{ color: '#757575', fontWeight: '500' }} />
           </Button>
           <Typography
             sx={{
-              fontSize: "16px",
-              fontWeight: "500",
-              lineHeight: "19.36pxpx",
-              width: "247px",
-              color: "#707070",
-              m: "auto 0",
-              fontFamily: "Inter, sans-serif",
+              fontSize: '16px',
+              fontWeight: '500',
+              lineHeight: '19.36pxpx',
+              width: '247px',
+              color: '#707070',
+              m: 'auto 0',
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             Add your Achievements
@@ -129,28 +160,28 @@ const UploadFiles = () => {
       </Box>
       <Box
         sx={{
-          width: "80%",
-          height: "221px",
-          m: "0 auto 55px 64px",
-          border: "1px solid #0A0A0A33",
-          borderRadius: "5px",
-          padding: "15px 16px 15px 41px",
-          boxShadow: "0px 4px 10px rgba(0, 0, 0, 0.1)",
+          width: '80%',
+          height: '221px',
+          m: '0 auto 55px 64px',
+          border: '1px solid #0A0A0A33',
+          borderRadius: '5px',
+          padding: '15px 16px 15px 41px',
+          boxShadow: '0px 4px 10px rgba(0, 0, 0, 0.1)'
         }}
       >
         <Box
           sx={{
-            display: "flex",
-            flexDirection: "row",
-            justifyContent: "space-between",
+            display: 'flex',
+            flexDirection: 'row',
+            justifyContent: 'space-between'
           }}
         >
           <Typography
             sx={{
-              fontSize: "24px",
-              fontWeight: "500",
-              lineHeight: "29.05px",
-              fontFamily: "Inter, sans-serif",
+              fontSize: '24px',
+              fontWeight: '500',
+              lineHeight: '29.05px',
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             Recommendations
@@ -158,12 +189,12 @@ const UploadFiles = () => {
           <Button
             onClick={handleClickOpen}
             sx={{
-              fontSize: "22px",
-              fontWeight: "500",
-              lineHeight: "26.63px",
-              color: "#432335",
-              "&:hover": { backgroundColor: "white" },
-              fontFamily: "Inter, sans-serif",
+              fontSize: '22px',
+              fontWeight: '500',
+              lineHeight: '26.63px',
+              color: '#432335',
+              '&:hover': { backgroundColor: 'white' },
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             +IMPORT
@@ -172,55 +203,69 @@ const UploadFiles = () => {
         <Divider
           style={{
             height: 1,
-            width: "100%",
-            color: "#00000033",
-            marginBottom: "25px",
+            width: '100%',
+            color: '#00000033',
+            marginBottom: '25px'
           }}
         />
         <Typography
           sx={{
-            fontSize: "16px",
-            fontWeight: "500",
-            lineHeight: "19.36px",
-            color: "#707070",
-            ml: "7px",
-            fontFamily: "Inter, sans-serif",
+            fontSize: '16px',
+            fontWeight: '500',
+            lineHeight: '19.36px',
+            color: '#707070',
+            ml: '7px',
+            fontFamily: 'Inter, sans-serif'
           }}
         >
           Request a recommendation
         </Typography>
-        <Box sx={{ display: "flex", ml: "7px" }}>
+        <Box sx={{ display: 'flex', ml: '7px' }}>
           <TextField
-            label="Email"
+            label='Email'
+            onChange={e => setMail(e.target.value)}
+            value={mail}
             sx={{
-              width: "50%",
-              padding: "14px 126px 13 px 13px",
-              mt: "10px",
-              height: "48px",
+              width: '50%',
+              padding: '14px 126px 13 px 13px',
+              mt: '10px',
+              height: '48px'
             }}
           />
           <Button
+            onClick={() => (ValidateEmail(mail) ? handleClickAlert() : handleClickErrorAlert())}
+            disabled={mail === ''}
             sx={{
-              color: "white",
-              fontSize: "20px",
-              fontWeight: "500",
-              backgroundColor: "#009688",
-              width: "122px",
-              height: "55px",
-              border: "1px solid #0A0A0A33",
-              borderRadius: "5px",
-              m: " auto 14px",
-              mt: "10px",
-              "&:hover": { backgroundColor: "#00695F" },
-              fontFamily: "Inter, sans-serif",
+              color: 'white',
+              fontSize: '20px',
+              fontWeight: '500',
+              backgroundColor: '#009688',
+              width: '122px',
+              height: '55px',
+              border: '1px solid #0A0A0A33',
+              borderRadius: '5px',
+              m: ' auto 14px',
+              mt: '10px',
+              '&:hover': { backgroundColor: '#00695F' },
+              fontFamily: 'Inter, sans-serif'
             }}
           >
             Send
           </Button>
+          <Snackbar open={openAlert} autoHideDuration={6000} onClose={handleCloseAlert}>
+            <Alert onClose={handleCloseAlert} severity='success' sx={{ width: '100%' }}>
+              Request a recommendation success!
+            </Alert>
+          </Snackbar>
+          <Snackbar open={error} autoHideDuration={6000} onClose={handleCloseAlert}>
+            <Alert onClose={handleCloseAlert} severity='error' sx={{ width: '100%' }}>
+              Please enter valid email address
+            </Alert>
+          </Snackbar>
         </Box>
       </Box>
     </Box>
-  );
-};
+  )
+}
 
-export default UploadFiles;
+export default UploadFiles
