@@ -14,7 +14,7 @@ import ControlPointIcon from '@mui/icons-material/ControlPoint'
 import React from 'react'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
 import { useSnackbar } from 'notistack'
-import CloseIcon from '@mui/icons-material/Close';
+import CloseIcon from '@mui/icons-material/Close'
 
 const UploadFiles = () => {
   const [open, setOpen] = React.useState(false)
@@ -36,12 +36,15 @@ const UploadFiles = () => {
   const handleClickAlert = () => {
     enqueueSnackbar('Request a recommendation success!', {
       variant: 'success',
-      action: key => <CloseIcon onClick={() => closeSnackbar(key)} />
+      action: key => <CloseIcon sx={{ cursor: 'pointer' }} onClick={() => closeSnackbar(key)} />
     })
   }
 
   const handleClickErrorAlert = () => {
-    enqueueSnackbar('Please enter valid email address', { variant: 'error' })
+    enqueueSnackbar('Please enter valid email address', {
+      variant: 'error',
+      action: key => <CloseIcon sx={{ cursor: 'pointer' }} onClick={() => closeSnackbar(key)} />
+    })
   }
 
   function ValidateEmail(mail: string) {
