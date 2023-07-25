@@ -2,7 +2,7 @@ import React from 'react'
 import { useForm } from 'react-hook-form'
 import Button from '@mui/material/Button'
 import ILoginProps from './types'
-import { Box, TextField, Typography } from '@mui/material'
+import { Box, Grid,TextField, Typography } from '@mui/material'
 import styles from './styles'
 
 const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) => {
