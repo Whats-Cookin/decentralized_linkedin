@@ -12,8 +12,6 @@ const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) 
     formState: { errors }
   } = useForm()
 
-
-  
   const onSubmit = handleSubmit(async ({ email, password }) => {
     console.log('you pressed submit, congratulations')
     try {
