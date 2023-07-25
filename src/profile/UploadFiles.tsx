@@ -1,5 +1,4 @@
 import {
-  Alert,
   Box,
   Button,
   Dialog,
@@ -13,14 +12,14 @@ import {
 } from '@mui/material'
 import ControlPointIcon from '@mui/icons-material/ControlPoint'
 import React from 'react'
-import Snackbar from '@mui/material/Snackbar'
 import MuiAlert, { AlertProps } from '@mui/material/Alert'
+import { useSnackbar } from 'notistack'
+import CloseIcon from '@mui/icons-material/Close';
 
 const UploadFiles = () => {
   const [open, setOpen] = React.useState(false)
   const [mail, setMail] = React.useState('')
-  const [openAlert, setOpenAlert] = React.useState(false)
-  const [error, setOpenErrorAlert] = React.useState(false)
+  const { enqueueSnackbar, closeSnackbar } = useSnackbar()
 
   const handleClickOpen = () => {
     setOpen(true)
@@ -35,20 +34,14 @@ const UploadFiles = () => {
   })
 
   const handleClickAlert = () => {
-    setOpenAlert(true)
+    enqueueSnackbar('Request a recommendation success!', {
+      variant: 'success',
+      action: key => <CloseIcon onClick={() => closeSnackbar(key)} />
+    })
   }
 
   const handleClickErrorAlert = () => {
-    setOpenErrorAlert(true)
-  }
-
-  const handleCloseAlert = (event?: React.SyntheticEvent | Event, reason?: string) => {
-    if (reason === 'clickaway') {
-      return
-    }
-
-    setOpenAlert(false)
-    setOpenErrorAlert(false)
+    enqueueSnackbar('Please enter valid email address', { variant: 'error' })
   }
 
   function ValidateEmail(mail: string) {
@@ -252,16 +245,6 @@ const UploadFiles = () => {
           >
             Send
           </Button>
-          <Snackbar open={openAlert} autoHideDuration={6000} onClose={handleCloseAlert}>
-            <Alert onClose={handleCloseAlert} severity='success' sx={{ width: '100%' }}>
-              Request a recommendation success!
-            </Alert>
-          </Snackbar>
-          <Snackbar open={error} autoHideDuration={6000} onClose={handleCloseAlert}>
-            <Alert onClose={handleCloseAlert} severity='error' sx={{ width: '100%' }}>
-              Please enter valid email address
-            </Alert>
-          </Snackbar>
         </Box>
       </Box>
     </Box>
