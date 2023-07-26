@@ -1,7 +1,7 @@
 interface IProfileProps {
-  toggleSnackbar: any;
-  setSnackbarMessage: any;
-  setLoading: any;
+  toggleSnackbar: any
+  setSnackbarMessage: any
+  setLoading: any
 }
 
-export default IProfileProps;
+export default IProfileProps

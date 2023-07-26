@@ -1,6 +1,5 @@
 interface ILoaderTypes {
-  open: boolean;
+  open: boolean
 }
 
-export default ILoaderTypes;
-
+export default ILoaderTypes
