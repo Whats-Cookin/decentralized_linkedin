@@ -1,8 +1,20 @@
-import React from 'react'
 import IProfileProps from './types'
+import UploadFiles from './UploadFiles'
+import { Box } from '@mui/material'
 
 const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
-  return <div></div>
+  return (
+    <Box
+      sx={{
+        display: 'flex',
+        justifyContent: 'flex-end',
+        width: '100%',
+        backgroundColor: '#849EA6'
+      }}
+    >
+      <UploadFiles />
+    </Box>
+  )
 }
 
 export default Profile
