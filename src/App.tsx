@@ -6,7 +6,7 @@ import Login from './Login/index'
 import './App.css'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import Box from '@mui/material/Box'
-import Profile from './profile'
+import Profile from './Profile/index'
 
 const App = () => {
   const [loading, setLoading] = useState(false)
@@ -53,6 +53,7 @@ const App = () => {
           <Snackbar snackbarMessage={snackbarMessage} isSnackbarOpen={isSnackbarOpen} toggleSnackbar={toggleSnackbar} />
           <Loader open={loading} />
           <Routes>
+          
             <Route path='/' element={<Profile {...commonProps} />} />
             <Route path='login' element={<Login {...commonProps} />} />
           </Routes>
