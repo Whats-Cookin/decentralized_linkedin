@@ -39,7 +39,7 @@ const App = () => {
               position: 'relative',
               backgroundColor: '#eeeeee',
               minHeight: '100vh',
-              display: 'flex',
+              // display: 'flex',
               width: '100%',
               flexDirection: 'column',
               alignItems: 'center',
