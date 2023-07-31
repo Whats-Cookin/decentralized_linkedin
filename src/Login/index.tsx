@@ -4,7 +4,7 @@ import Button from '@mui/material/Button'
 import ILoginProps from './types'
 import { Box, TextField, Typography } from '@mui/material'
 import styles from './styles'
-import { Link as RouterLink } from 'react-router-dom';
+import { Link as RouterLink } from 'react-router-dom'
 
 const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) => {
   const {
