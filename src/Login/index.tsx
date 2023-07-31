@@ -4,6 +4,7 @@ import Button from '@mui/material/Button'
 import ILoginProps from './types'
 import { Box, TextField, Typography } from '@mui/material'
 import styles from './styles'
+import { Link as RouterLink } from 'react-router-dom';
 
 const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) => {
   const {
@@ -86,8 +87,8 @@ const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) 
           error={!!errors.password}
         />
       </Box>
-      <Button sx={{ width: '100%' }} type='submit' variant='contained' size='medium'>
-        Login
+      <Button component={RouterLink} to='/' sx={{ width: '100%' }} variant='contained' size='medium' type='submit'>
+        LogIn
       </Button>
     </form>
   )
