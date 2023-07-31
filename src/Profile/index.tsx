@@ -3,7 +3,7 @@ import { SidebarContainer } from './styles'
 import { Box, Typography, TextField, Divider, Button } from '@mui/material'
 import Link from '@mui/material/Link'
 import png from './blank-profile-picture-973460_960_720.webp'
-import png1 from './download.png'
+import logo from '../../src/favicon.svg'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import EditIcon from '@mui/icons-material/Edit'
 import GoogleIcon from '@mui/icons-material/Google'
@@ -22,21 +22,7 @@ const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
     <Box sx={{ display: 'flex' }}>
       <Box sx={{ alignItems: 'start', width: '35%', bgcolor: '#80B8BD' }}>
         <Box sx={{ display: 'flex', pt: '39px', pl: '40px', width: '332px', mb: '72px' }}>
-          <img src={png1} style={{ width: '50px', height: '50px' }} />
-          <Typography
-            sx={{
-              fontSize: '38px',
-              lineHeight: '28px',
-              fontWeight: '600',
-              color: 'white',
-              ml: '10px',
-              pt: '15px',
-              letterSpacing: '2px',
-              fontFamily: 'Inter, sans-serif'
-            }}
-          >
-            LinkedTrust
-          </Typography>
+          <img src={logo} className='pl-8' />
         </Box>
         <Box sx={{}}>
           <Box sx={{ pl: '70px' }}>
