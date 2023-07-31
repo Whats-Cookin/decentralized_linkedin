@@ -53,7 +53,7 @@ const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
                 mb: '25px'
               }}
             >
-             Mohamed Ali
+              Mohamed Ali
               <Button sx={{ pb: '20px' }}>
                 <EditIcon sx={{ color: 'gray', fontSize: '32', p: '0' }} />
               </Button>{' '}
