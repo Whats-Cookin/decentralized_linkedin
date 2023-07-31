@@ -2,7 +2,7 @@ import IProfileProps from './types'
 import { SidebarContainer } from './styles'
 import { Box, Typography, TextField, Divider, Button } from '@mui/material'
 import Link from '@mui/material/Link'
-import png from './blank-profile-picture-973460_960_720.webp'
+import png from './blank-profile-picture.png'
 import logo from '../../src/logo/favicon.svg'
 import CameraAltIcon from '@mui/icons-material/CameraAlt'
 import EditIcon from '@mui/icons-material/Edit'
@@ -53,7 +53,7 @@ const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
                 mb: '25px'
               }}
             >
-              Nabil Abdallah{' '}
+             Mohamed Ali
               <Button sx={{ pb: '20px' }}>
                 <EditIcon sx={{ color: 'gray', fontSize: '32', p: '0' }} />
               </Button>{' '}
@@ -211,7 +211,7 @@ const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
                 sx={{
                   fontSize: '14px',
                   fontWeight: '500',
-                  lineHeight: '16.94pxpx',
+                  lineHeight: '16.94px',
                   pl: '20px',
                   fontFamily: 'Inter, sans-serif'
                 }}
