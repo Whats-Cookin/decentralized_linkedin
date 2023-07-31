@@ -61,8 +61,8 @@ const UploadFiles = () => {
       sx={{
         backgroundColor: '#FFFFFF',
         minHeight: '100vh',
-        width: '64.58%',
-        height: '100%',
+        width: '65%',
+        height: 'auto',
         display: 'flex',
         flexDirection: 'column',
         overflow: 'hidden'

@@ -6,9 +6,8 @@ import Login from './Login/index'
 import './App.css'
 import { CssBaseline, ThemeProvider, createTheme } from '@mui/material'
 import Box from '@mui/material/Box'
-import Profile from './profile'
 import { SnackbarProvider } from 'notistack'
-
+import Profile from './Profile'
 const App = () => {
   const [loading, setLoading] = useState(false)
   const [isSnackbarOpen, toggleSnackbar] = useState(false)
@@ -40,7 +39,7 @@ const App = () => {
               position: 'relative',
               backgroundColor: '#eeeeee',
               minHeight: '100vh',
-              display: 'flex',
+              // display: 'flex',
               width: '100%',
               flexDirection: 'column',
               alignItems: 'center',
