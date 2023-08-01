@@ -1,7 +1,7 @@
-interface ILoginProps {
+interface IProfileProps {
   toggleSnackbar: any
   setSnackbarMessage: any
   setLoading: any
 }
 
-export default ILoginProps
+export default IProfileProps
