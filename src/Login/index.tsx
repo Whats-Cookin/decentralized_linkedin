@@ -34,7 +34,7 @@ const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) 
   })
 
   return (
-    <Box sx={{ display:'flex' ,flexDirection:'row', position:"flex"}}>
+    <Box sx={{ display: 'flex', flexDirection: 'row', position: 'flex' }}>
       <Box
         sx={{
           alignItems: 'center',
@@ -98,67 +98,70 @@ const Login = ({ toggleSnackbar, setSnackbarMessage, setLoading }: ILoginProps) 
           </div>
         </div>
       </Box>
-      <Box sx={{width:'70% ',height:'100%'}}>
-      <form onSubmit={onSubmit} style={{ maxWidth: '430px', width:"50%", alignContent:'center', position:'fixed' ,margin:'50px'}}>
-      <Box
-        sx={{
-          display: 'flex',
-          flexDirection: 'column',
-          rowGap: 2,
-          width: '100%',
-          padding: '2rem',
-          maxWidth: '430px',
-          marginTop: { xs: 15, md: 8 },
-          background: '#FFFFFF',
-          boxShadow: '0px 1px 20px rgba(0, 0, 0, 0.25)',
-          zIndex: 20,
-          borderRadius: '10px'
-        }}
-      >
-        <Typography
-          variant='h5'
-          style={{
-            textAlign: 'center',
-            fontWeight: 'bold',
-            fontSize: '2.5rem'
-          }}
-          sx={{ color: 'primary.main' }}
+      <Box sx={{ width: '70% ', height: '100%' }}>
+        <form
+          onSubmit={onSubmit}
+          style={{ maxWidth: '430px', width: '50%', alignContent: 'center', position: 'fixed', margin: '50px' }}
         >
-          Login
-        </Typography>
-        <TextField
-          {...register('email', {
-            required: 'Email is required',
-            pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-              message: 'Invalid email address'
-            }
-          })}
-          fullWidth
-          label='Email'
-          sx={styles.inputField}
-          variant='filled'
-          type='email'
-          helperText={(errors.email?.message as string) || ''}
-          error={!!errors.email}
-        />
-        <TextField
-          {...register('password', {
-            required: 'Password is required'
-          })}
-          fullWidth
-          label='Password'
-          sx={styles.inputField}
-          variant='filled'
-          type='password'
-          helperText={(errors.password?.message as string) || ''}
-          error={!!errors.password}
-        />
-      </Box>
-      <Button component={RouterLink} to='/' sx={{ width: '100%' }} variant='contained' size='medium' type='submit'>
-        LogIn
-      </Button>
-    </form>
+          <Box
+            sx={{
+              display: 'flex',
+              flexDirection: 'column',
+              rowGap: 2,
+              width: '100%',
+              padding: '2rem',
+              maxWidth: '430px',
+              marginTop: { xs: 15, md: 8 },
+              background: '#FFFFFF',
+              boxShadow: '0px 1px 20px rgba(0, 0, 0, 0.25)',
+              zIndex: 20,
+              borderRadius: '10px'
+            }}
+          >
+            <Typography
+              variant='h5'
+              style={{
+                textAlign: 'center',
+                fontWeight: 'bold',
+                fontSize: '2.5rem'
+              }}
+              sx={{ color: 'primary.main' }}
+            >
+              Login
+            </Typography>
+            <TextField
+              {...register('email', {
+                required: 'Email is required',
+                pattern: {
+                  value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
+                  message: 'Invalid email address'
+                }
+              })}
+              fullWidth
+              label='Email'
+              sx={styles.inputField}
+              variant='filled'
+              type='email'
+              helperText={(errors.email?.message as string) || ''}
+              error={!!errors.email}
+            />
+            <TextField
+              {...register('password', {
+                required: 'Password is required'
+              })}
+              fullWidth
+              label='Password'
+              sx={styles.inputField}
+              variant='filled'
+              type='password'
+              helperText={(errors.password?.message as string) || ''}
+              error={!!errors.password}
+            />
+          </Box>
+          <Button component={RouterLink} to='/' sx={{ width: '100%' }} variant='contained' size='medium' type='submit'>
+            LogIn
+          </Button>
+        </form>
       </Box>
     </Box>
   )
