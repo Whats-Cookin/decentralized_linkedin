@@ -1,5 +1,4 @@
 import IProfileProps from './types'
-import { SidebarContainer } from './styles'
 import { Box, Typography, TextField, Divider, Button } from '@mui/material'
 import Link from '@mui/material/Link'
 import png from './blank-profile-picture.png'
@@ -22,7 +21,7 @@ const Profile = ({ toggleSnackbar, setSnackbarMessage }: IProfileProps) => {
     <Box sx={{ display: 'flex' }}>
       <Box sx={{ alignItems: 'start', width: '35%', bgcolor: '#80B8BD' }}>
         <Box sx={{ display: 'flex', pt: '39px', pl: '40px', width: '332px', mb: '72px' }}>
-          <img src={logo} className='pl-8' />
+          <img src={logo} className='pl-8' alt='logo' />
         </Box>
         <Box sx={{}}>
           <Box sx={{ pl: '70px' }}>
